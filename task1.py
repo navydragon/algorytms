@@ -43,7 +43,7 @@ class LinkedList:
             node = node.next
         if len(arr) > 0:
             return arr
-        return None
+        return arr
         
     def delete(self, val, all=False):
         node = self.head
@@ -97,6 +97,3 @@ class LinkedList:
         if afterNode == self.tail:
             self.tail = newNode
         return True
-
-
-
