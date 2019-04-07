@@ -21,7 +21,7 @@ class LinkedList:
         node = self.head
         while node is not None:
             node = node.next
-            
+
     def find(self, val):
         node = self.head
         while node is not None:
@@ -43,13 +43,14 @@ class LinkedList:
         
     def delete(self, val, all=False):
         node = self.head
-        prev = self.head
+        prev = None
         count = 0
         while node != None:
             if node.value == val:
                 if node == self.head and node == self.tail:
                     self.head = None
                     self.tail = None
+                    return
                 elif node == self.head:
                     self.head = node.next
                 elif node == self.tail:
@@ -58,8 +59,10 @@ class LinkedList:
                 count += 1
                 if (all == False):
                     return count
-            prev = node    
+            else:
+                prev = node    
             node = node.next
+            self.print_all_nodes()
         return count
         
     def clean(self):
@@ -87,4 +90,3 @@ class LinkedList:
         if afterNode == self.tail:
             self.tail = newNode
         return True
-
