@@ -43,7 +43,7 @@ class LinkedList2:
     def delete(self, val, all=False):
         node = self.head
         count = 0
-        while node != None:
+        while node is not None:
             prev_node = node.prev
             next_node = node.next
             if node.value == val:
@@ -61,15 +61,23 @@ class LinkedList2:
                     prev_node.next = next_node
                     next_node.prev = prev_node
                 count += 1
+                next_node = node.next
+                node.prev = None
+                node.next = None
                 if (all == False):
                     return count
-            node = node.next
+            node = next_node
         return count 
         
     def clean(self):
+        node = self.head
         self.head = None
         self.tail = None
-        pass 
+        while node is not None:
+            next_node = node.next
+            node.next = None
+            node.prev = None
+            node = next_node
 
     def len(self):
         count = 0
