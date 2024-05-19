@@ -55,6 +55,10 @@ class TestDynArray(unittest.TestCase):
         self.assertEqual(len(self.arr), 31)
         self.assertEqual(self.arr.capacity, 42)
 
+    def test_insert_index_error_in_empty_array(self):
+        self.arr.insert(0,99)
+        self.assertEqual(self.arr.count,1)
+
 
     @staticmethod
     def make_dummy_array(arr: DynArray, val: int):

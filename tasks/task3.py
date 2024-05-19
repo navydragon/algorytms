@@ -36,7 +36,7 @@ class DynArray:
         # добавляем объект itm в позицию i, начиная с 0
         # Добавьте метод insert(i, itm), который вставляет в i-ю позицию объект itm, сдвигая вперёд все последующие элементы.
         # Учтите, что новая длина массива может превысить размер буфера.
-        if i < 0 or i >= self.count:
+        if i < 0 or i > self.count:
             raise IndexError('Index is out of bounds')
 
         if self.count == self.capacity:
