@@ -21,7 +21,7 @@ class BloomFilter:
         self.bit_array |= (1 << hash1)
         self.bit_array |= (1 << hash2)
 
-    def contains (self, string):
+    def is_value (self, string):
         hash1 = self.hash1(string)
         hash2 = self.hash2(string)
         return (self.bit_array & (1 << hash1)) and (self.bit_array & (1 << hash2))

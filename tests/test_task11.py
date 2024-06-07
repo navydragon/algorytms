@@ -16,12 +16,12 @@ class TestBloomFilter(unittest.TestCase):
 
         for string in test_strings:
             self.bloom.add(string)
-            self.assertTrue(self.bloom.contains(string))
+            self.assertTrue(self.bloom.is_value(string))
 
         # Проверка ложноположительных срабатываний
         false_strings = ["abcdefghij", "klmnopqrst"]
         for string in false_strings:
-            self.assertFalse(self.bloom.contains(string))
+            self.assertFalse(self.bloom.is_value(string))
 
 
 if __name__ == '__main__':
